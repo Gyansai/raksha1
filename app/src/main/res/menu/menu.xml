@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Wearer">
+
+    <item
+        android:id="@+id/predefined_number"
+        android:orderInCategory="300"
+        android:title="Predefinednumbers"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:theme="@style/Theme.AppCompat.Light"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/predefined_message"
+        android:orderInCategory="300"
+        android:title="predefiedmessages"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:theme="@style/Theme.AppCompat.Light"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/languages"
+        android:orderInCategory="300"
+        android:title="languages"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:theme="@style/Theme.AppCompat.Light"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/action_favorite"
+        android:orderInCategory="300"
+        android:title="HELP"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:theme="@style/Theme.AppCompat.Light"
+        app:showAsAction="never"></item>
+
+</menu>
