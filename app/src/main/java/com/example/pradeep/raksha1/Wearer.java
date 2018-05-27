@@ -5,13 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 public class Wearer extends AppCompatActivity implements View.OnClickListener {
-   Button b5;
+   Button b5,langbutton,helpbutton,messages,numbers;
    private long backpresstime;
    private Toast backtoast;
    Toolbar toolbar1;
@@ -21,6 +22,10 @@ public class Wearer extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wearer);
         b5=(Button)findViewById(R.id.button2);
+        langbutton=(Button)findViewById(R.id.langs);
+        helpbutton=(Button)findViewById(R.id.help);
+        messages=(Button)findViewById(R.id.pdmes);
+        numbers=(Button)findViewById(R.id.pdnum);
         toolbar1=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar1);
         toolbar1.setTitle("hi");
@@ -62,4 +67,13 @@ public class Wearer extends AppCompatActivity implements View.OnClickListener {
 
 
     }
+
+    public void help(MenuItem item) {
+
     }
+
+    public void pdnumbers(MenuItem item) {
+    }
+    public void messages(MenuItem item) {
+    }
+}

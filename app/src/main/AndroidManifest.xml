@@ -27,11 +27,9 @@
         </activity>
         <activity
             android:name=".Wearer"
-            android:label="@string/app_name">
-
-        </activity>
-
-        <activity android:name=".falldetected"></activity>
+            android:label="@string/app_name"></activity>
+        <activity android:name=".falldetected" />
+        <activity android:name=".helpactivity"></activity>
     </application>
 
 </manifest>

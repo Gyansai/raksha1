@@ -5,30 +5,33 @@
     tools:context=".Wearer">
 
     <item
-        android:id="@+id/predefined_number"
+        android:id="@+id/pdnum"
         android:orderInCategory="300"
         android:title="Predefinednumbers"
+        android:onClick="pdnumbers"
         android:icon="@drawable/ic_launcher_foreground"
         app:theme="@style/Theme.AppCompat.Light"
         app:showAsAction="never"></item>
     <item
-        android:id="@+id/predefined_message"
+        android:id="@+id/pdmes"
         android:orderInCategory="300"
         android:title="predefiedmessages"
+        android:onClick="messages"
         android:icon="@drawable/ic_launcher_foreground"
         app:theme="@style/Theme.AppCompat.Light"
         app:showAsAction="never"></item>
     <item
-        android:id="@+id/languages"
+        android:id="@+id/langs"
         android:orderInCategory="300"
         android:title="languages"
         android:icon="@drawable/ic_launcher_foreground"
         app:theme="@style/Theme.AppCompat.Light"
         app:showAsAction="never"></item>
     <item
-        android:id="@+id/action_favorite"
+        android:id="@+id/help"
         android:orderInCategory="300"
         android:title="HELP"
+        android:onClick="help"
         android:icon="@drawable/ic_launcher_foreground"
         app:theme="@style/Theme.AppCompat.Light"
         app:showAsAction="never"></item>
