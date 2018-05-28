@@ -4,4 +4,7 @@
     <string name="bluetooothoff">BToff</string>
     <string name="bluetooothdisc">BTdisc</string>
     <string name="Settings">settings</string>
+    <string name="ok" />
+    <string name="dialog_EnterNumber" />
+    <string name="dialog_PredefinedNumbers">4</string>
 </resources>

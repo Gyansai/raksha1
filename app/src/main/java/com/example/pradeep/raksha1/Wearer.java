@@ -1,6 +1,10 @@
 package com.example.pradeep.raksha1;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,7 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 public class Wearer extends AppCompatActivity implements View.OnClickListener {
-   Button b5,langbutton,helpbutton,messages,numbers;
+   Button b5,langbutton,helpbutton,messages,numbers,b4;
    private long backpresstime;
    private Toast backtoast;
    Toolbar toolbar1;
@@ -30,6 +34,13 @@ public class Wearer extends AppCompatActivity implements View.OnClickListener {
         setSupportActionBar(toolbar1);
         toolbar1.setTitle("hi");
         b5.setOnClickListener(this);
+        b4 = (Button) findViewById(R.id.button3);
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                opencaretaker();
+            }
+        });
 
     }
 
@@ -67,13 +78,25 @@ public class Wearer extends AppCompatActivity implements View.OnClickListener {
 
 
     }
+    public void opencaretaker(){
+        Intent intent = new Intent(this,caretaker.class);
+        startActivity(intent);
+    }
 
     public void help(MenuItem item) {
+        Intent intent = new Intent(this,helpactivity.class);
+        startActivity(intent);
 
     }
 
     public void pdnumbers(MenuItem item) {
+        
+
     }
+
+
+
     public void messages(MenuItem item) {
+
     }
 }
