@@ -7,100 +7,22 @@
     android:layout_height="match_parent"
     tools:context="com.example.pradeep.raksha1.MainActivity">
 
-    <Button
-        android:id="@+id/bt1"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/bluetoooth"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/bt2"
-        style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/scan"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/bt4"
-        android:layout_below="@+id/bt1"
-        android:layout_marginEnd="14dp"
-        android:text="@string/bluetooothoff"
-        android:visibility="invisible" />
-
-    <Button
-        android:id="@+id/b3"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="18dp"
-        android:layout_toEndOf="@+id/bt1"
-        android:onClick="enabledisc"
-        android:text="discoveryMODE"
-        android:visibility="invisible" />
-
-    <ListView
-        android:id="@+id/lvNewDevices"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/bt7" />
-
-    <Button
-        android:id="@+id/bt4"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/bt2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="141dp"
         android:onClick="scanning"
         android:text="scan" />
 
-    <Button
-        android:id="@+id/button"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/bt2"
-        android:layout_alignBottom="@+id/bt2"
+    <ListView
+        android:id="@+id/lvNewDevices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         android:layout_alignParentStart="true"
-        android:onClick="connect"
-        android:text="connect"
-        android:textSize="12dp" />
-
-    <Button
-        android:id="@+id/bt7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/b3"
-        android:layout_marginEnd="11dp"
-        android:layout_marginTop="35dp"
-        android:onClick="start"
-        android:text="start" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bt7"
-        android:layout_alignEnd="@+id/bt7"
-        android:layout_marginEnd="16dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignBaseline="@+id/bt1"
-        android:layout_alignBottom="@+id/bt1"
-        android:layout_alignParentStart="true"
-        android:text="@string/bluetoooth"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
-
-
+        android:layout_below="@+id/scan" />
 </RelativeLayout>

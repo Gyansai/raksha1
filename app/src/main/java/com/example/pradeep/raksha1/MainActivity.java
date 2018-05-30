@@ -31,7 +31,7 @@ import java.util.Set;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity  implements AdapterView.OnItemClickListener  {
-    Button b1,b2,b3,b4,b5;
+    Button scan;
     public  static String deviceAddress;
     private long backpresstime;
     private Toast backtoast;
@@ -46,47 +46,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
     Switch s1;
     private static final String TAG = "MainActivity";
     // Create a BroadcastReceiver for ACTION_FOUND.
-    private final BroadcastReceiver mBroadcastReceiver1 = new BroadcastReceiver() {
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (mbluetoothaadapter.ACTION_STATE_CHANGED.equals(action)) {
-                final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, mbluetoothaadapter.ERROR);
-            }
-        }
-    };
-    private final BroadcastReceiver mBroadcastReceiver2 = new BroadcastReceiver() {
 
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            final String action = intent.getAction();
-
-            if (action.equals(BluetoothAdapter.ACTION_SCAN_MODE_CHANGED)) {
-
-                int mode = intent.getIntExtra(BluetoothAdapter.EXTRA_SCAN_MODE, BluetoothAdapter.ERROR);
-
-                switch (mode) {
-                    //Device is in Discoverable Mode
-                    case BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE:
-                        Log.d(TAG, "mBroadcastReceiver2: Discoverability Enabled.");
-                        break;
-                    //Device not in discoverable mode
-                    case BluetoothAdapter.SCAN_MODE_CONNECTABLE:
-                        Log.d(TAG, "mBroadcastReceiver2: Discoverability Disabled. Able to receive connections.");
-                        break;
-                    case BluetoothAdapter.SCAN_MODE_NONE:
-                        Log.d(TAG, "mBroadcastReceiver2: Discoverability Disabled. Not able to receive connections.");
-                        break;
-                    case BluetoothAdapter.STATE_CONNECTING:
-                        Log.d(TAG, "mBroadcastReceiver2: Connecting....");
-                        break;
-                    case BluetoothAdapter.STATE_CONNECTED:
-                        Log.d(TAG, "mBroadcastReceiver2: Connected.");
-                        break;
-                }
-
-            }
-        }
-    };
 
     private BroadcastReceiver mBroadcastReceiver3 = new BroadcastReceiver() {
         @Override
@@ -138,85 +98,19 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        b1 = (Button)findViewById(R.id.bt1);
-        b2 = (Button)findViewById(R.id.bt2);
-        b3 = (Button)findViewById(R.id.b3);
-        b4=(Button)findViewById(R.id.button);
-        b5=(Button)findViewById(R.id.bt7);
-        s1=(Switch)findViewById(R.id.switch1);
-        s1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // do something, the isChecked will be
-                // true if the switch is in the On position
-            if (isChecked == true){enablebt();}
-            if(isChecked == false){
-                if (mbluetoothaadapter.isEnabled())
-                {btoff();}
-            }
-            }
-        });
-
+        scan=(Button)findViewById(R.id.scan);
         Ivnewdevices = (ListView)findViewById(R.id.lvNewDevices) ;
         mbtdevices= new ArrayList<>();
 
         Ivnewdevices.setOnItemClickListener(MainActivity.this);
         mbluetoothaadapter= BluetoothAdapter.getDefaultAdapter();
 
-
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                enablebt();
-            }
-        });
         //Broadcasts when bond state changes (ie:pairing)
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
         registerReceiver(mBroadcastReceiver4, filter);
 
 
     }
-
-    private void btoff() {
-        if (mbluetoothaadapter.isEnabled()) {
-            mbluetoothaadapter.disable();
-
-            IntentFilter BTintent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-            registerReceiver(mBroadcastReceiver1, BTintent);
-
-        }
-
-    }
-
-
-    public void   enablebt(){
-
-
-        if(mbluetoothaadapter==null) {
-            Log.d(TAG,"enablebt dose not have bluetooth ");
-        }
-      if (!mbluetoothaadapter.isEnabled()){
-          Intent enablebt= new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-          startActivity(enablebt);
-          IntentFilter BTintent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-          registerReceiver(mBroadcastReceiver1,BTintent);
-      }
-
-
-    }
-
-     public void enabledisc(View view){
-         Log.d(TAG, "btnEnableDisable_Discoverable: Making device discoverable for 300 seconds.");
-
-         Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-         discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
-         startActivity(discoverableIntent);
-
-         IntentFilter intentFilter = new IntentFilter(mbluetoothaadapter.ACTION_SCAN_MODE_CHANGED);
-         registerReceiver(mBroadcastReceiver2,intentFilter);
-
-    }
-
 
     public void scanning(View view) {
 
@@ -354,8 +248,8 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
             /*unregisterReceiver(mBroadcastReceiver1);
             unregisterReceiver(mBroadcastReceiver1);
             unregisterReceiver(mBroadcastReceiver2);*/
-            if(mBroadcastReceiver1.equals(true)){unregisterReceiver(mBroadcastReceiver1); }
-            if(mBroadcastReceiver2.equals(true)){unregisterReceiver(mBroadcastReceiver2); }
+
+
             if(mBroadcastReceiver3.equals(true)){unregisterReceiver(mBroadcastReceiver3); }
             if(mBroadcastReceiver4.equals(true)){unregisterReceiver(mBroadcastReceiver4); }
             if(mbluetoothaadapter.isDiscovering()){mbluetoothaadapter.cancelDiscovery(); }

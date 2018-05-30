@@ -5,28 +5,15 @@
     tools:context=".Wearer">
 
     <item
-        android:id="@+id/pdnum"
+        android:id="@+id/settings"
         android:orderInCategory="300"
-        android:title="Predefinednumbers"
-        android:onClick="pdnumbers"
+        android:title="SETTINGS"
+        android:onClick="settings"
         android:icon="@drawable/ic_launcher_foreground"
         app:theme="@style/Theme.AppCompat.Light"
         app:showAsAction="never"></item>
-    <item
-        android:id="@+id/pdmes"
-        android:orderInCategory="300"
-        android:title="predefiedmessages"
-        android:onClick="messages"
-        android:icon="@drawable/ic_launcher_foreground"
-        app:theme="@style/Theme.AppCompat.Light"
-        app:showAsAction="never"></item>
-    <item
-        android:id="@+id/langs"
-        android:orderInCategory="300"
-        android:title="languages"
-        android:icon="@drawable/ic_launcher_foreground"
-        app:theme="@style/Theme.AppCompat.Light"
-        app:showAsAction="never"></item>
+
+
     <item
         android:id="@+id/help"
         android:orderInCategory="300"
@@ -35,5 +22,13 @@
         android:icon="@drawable/ic_launcher_foreground"
         app:theme="@style/Theme.AppCompat.Light"
         app:showAsAction="never"></item>
+    <item
+        android:id="@+id/SOS"
+        android:icon="@drawable/sosicon"
+        android:onClick="sendmessage"
+        android:orderInCategory="400"
+        android:title="sos"
+        app:showAsAction="always"
+        app:theme="@style/Theme.AppCompat.Light"></item>
 
 </menu>
